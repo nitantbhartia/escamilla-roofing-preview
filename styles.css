@@ -1,0 +1,334 @@
+/* Escamilla’s — gutter-coil / downspout log.
+   Mill aluminum, tar eave, rain hatch. Not terracotta. */
+
+:root {
+  --mill: #c5ccc6;
+  --mill-2: #9aa39c;
+  --tar: #1e2422;
+  --eave: #2a312f;
+  --ink: #e8ece8;
+  --mute: #8e9690;
+  --rain: #6a8a9a;
+  --oil: #c4a35a;
+  --paper: #dfe4df;
+  --rule: #4a5350;
+  --max: 1120px;
+  --pad: clamp(1rem, 3.5vw, 2.2rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--tar); }
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--tar);
+  line-height: 1.5;
+  font-size: 1.02rem;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, .mark b {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+  margin: 0;
+  text-transform: uppercase;
+}
+p { margin: 0; }
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  background: var(--oil);
+  color: var(--tar);
+  padding: 0.4rem 0.7rem;
+  z-index: 40;
+}
+.skip:focus { top: 0.6rem; }
+
+.mast {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #252c2a;
+  border-bottom: 1px solid var(--rule);
+}
+.mast-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.7rem var(--pad);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.mark {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.mark-coil {
+  width: 1.35rem;
+  height: 1.35rem;
+  border: 4px solid var(--mill);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px var(--eave);
+}
+.mark b { font-size: 1.15rem; display: block; }
+.mark small {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+nav {
+  display: flex;
+  gap: 1rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+nav a { text-decoration: none; color: var(--mute); }
+nav a:hover { color: var(--ink); }
+.mast-tools { display: flex; gap: 0.6rem; align-items: center; }
+.lang {
+  display: flex;
+  border: 1px solid var(--rule);
+}
+.lang button {
+  background: transparent;
+  color: var(--mute);
+  border: 0;
+  padding: 0.28rem 0.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.lang button[aria-pressed="true"] {
+  background: var(--mill);
+  color: var(--tar);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.62rem 1rem;
+  font-size: 0.95rem;
+}
+.btn.ink { background: var(--eave); color: var(--ink); border: 1px solid var(--rule); }
+.btn.mill { background: var(--mill); color: var(--tar); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--mute); }
+
+.loghead { padding: 1.6rem var(--pad) 0; max-width: var(--max); margin: 0 auto; }
+.log-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rain);
+  border-bottom: 1px dashed var(--rule);
+  padding-bottom: 0.55rem;
+  margin-bottom: 1.2rem;
+}
+.log-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+.kicker {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--oil);
+  margin-bottom: 0.45rem;
+}
+h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); max-width: 12ch; }
+.lede { margin: 0.9rem 0 1.2rem; color: var(--paper); max-width: 42ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.fine { margin-top: 0.85rem; color: var(--mute); font-size: 0.9rem; }
+.coil-art { margin: 0; border: 1px solid var(--rule); }
+.coil-art figcaption {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  color: var(--mute);
+  padding: 0.45rem 0.6rem;
+  background: var(--eave);
+}
+
+.tape {
+  overflow: hidden;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-top: 1.6rem;
+  background: var(--eave);
+}
+.tape-inner {
+  display: flex;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--mill-2);
+  white-space: nowrap;
+  animation: run 28s linear infinite;
+}
+.tape-inner i {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--rain);
+  border-radius: 50%;
+  align-self: center;
+}
+@keyframes run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.sheet, .gutter-log, .yelp-card, .ticket {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.2rem var(--pad);
+}
+.sheet-h { margin-bottom: 1.2rem; max-width: 50ch; }
+.sheet-h h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.2rem 0 0.5rem; }
+.coil-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: none;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.coil-list li {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.4fr) 1fr;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.98rem;
+}
+.coil-list b {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.15rem;
+}
+.coil-list p { color: var(--paper); }
+.why {
+  margin-top: 1.4rem;
+  background: var(--eave);
+  border-left: 4px solid var(--mill);
+  padding: 1rem 1.1rem;
+}
+.why h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.why ul { margin: 0; padding-left: 1.1rem; color: var(--paper); }
+
+.gutter-log {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  background: #242b29;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  max-width: none;
+  padding-left: max(var(--pad), calc(50% - 560px));
+  padding-right: max(var(--pad), calc(50% - 560px));
+}
+.gutter-log h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.2rem 0 0.6rem; }
+.g-dl { margin: 1rem 0 0; display: grid; gap: 0.75rem; }
+.g-dl div { border-top: 1px dashed var(--rule); padding-top: 0.55rem; }
+.g-dl dt {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.05rem;
+}
+.g-dl dd { margin: 0.15rem 0 0; color: var(--paper); }
+.profile { border: 1px solid var(--rule); }
+
+.yelp-card blockquote {
+  margin: 0.6rem 0 0;
+  padding: 1.1rem 1.2rem;
+  background: var(--paper);
+  color: var(--tar);
+  border-left: 5px solid var(--rain);
+}
+.yelp-card p { max-width: 62ch; }
+.yelp-card footer {
+  margin-top: 0.8rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+.yelp-card cite { color: var(--rain); font-style: normal; }
+
+.ticket {
+  background: var(--paper);
+  color: var(--tar);
+  max-width: none;
+  padding-left: max(var(--pad), calc(50% - 560px));
+  padding-right: max(var(--pad), calc(50% - 560px));
+}
+.ticket-head h2 { font-size: 2rem; }
+.ticket-head p { margin: 0.4rem 0 1rem; color: #3d4744; max-width: 52ch; }
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1rem;
+}
+label { display: flex; flex-direction: column; gap: 0.28rem; font-size: 0.82rem; }
+label span {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+}
+input, select, textarea {
+  font: inherit;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid #8e9690;
+  background: #f4f6f4;
+  color: var(--tar);
+}
+.wide { grid-column: 1 / -1; }
+form .btn { justify-self: start; margin-top: 0.3rem; }
+.ticket-alt { margin-top: 0.9rem; font-size: 0.9rem; }
+.ticket-alt a { color: #3d4744; }
+
+.foot {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.4rem var(--pad) 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--mute);
+  font-size: 0.9rem;
+}
+.foot b { display: block; color: var(--ink); font-family: "Barlow Condensed", sans-serif; text-transform: uppercase; letter-spacing: 0.04em; }
+.foot-links { display: flex; gap: 1rem; align-items: center; }
+.foot-links a { color: var(--mill); }
+
+@media (max-width: 820px) {
+  nav { display: none; }
+  .log-grid, .gutter-log, .coil-list li, form { grid-template-columns: 1fr; }
+  .mast-inner { flex-wrap: wrap; }
+}

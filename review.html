@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leave a review · Escamilla’s Roofing and Raingutters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .rev {
+      max-width: 720px;
+      margin: 1.5rem auto 2.5rem;
+      padding: 1.2rem var(--pad);
+    }
+    .rev-card {
+      background: var(--paper);
+      color: var(--tar);
+      border: 1px solid #8e9690;
+      padding: 1.3rem;
+    }
+    .rev h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0.4rem 0 0.5rem; }
+    .rev p { max-width: 52ch; }
+    .rev ol { padding-left: 1.2rem; }
+    .rev a { color: #3d4744; }
+    .honest {
+      margin-top: 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: #3d4744;
+      border-top: 1px dashed #8e9690;
+      padding-top: 0.7rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <div class="mast-inner">
+      <a class="mark" href="index.html">
+        <span class="mark-coil" aria-hidden="true"></span>
+        <span>
+          <b>Escamilla’s</b>
+          <small>Roofing and Raingutters</small>
+        </span>
+      </a>
+      <div class="mast-tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <a class="btn ink" href="index.html" data-i18n="back">Back to shop</a>
+      </div>
+    </div>
+  </header>
+  <main class="rev">
+    <p class="kicker" data-i18n="kicker">After the job</p>
+    <div class="rev-card">
+      <h1 data-i18n="h1">If the work was good, say so where other people look.</h1>
+      <p data-i18n="lede">The original Escamilla’s site prints one Yelp note from Veronica Schultz. This page does not invent a Google review link. Search the shop name on the listing you already use.</p>
+      <ol>
+        <li data-i18n="s1">Search “Escamilla’s Roofing and Raingutters Escondido”.</li>
+        <li data-i18n="s2">Open the listing that matches this family shop — Escondido, (760) 639-8349.</li>
+        <li data-i18n="s3">Write what happened on the roof or the gutter run. Name helps.</li>
+      </ol>
+      <p class="honest" data-i18n="honest">No Maps URL is printed here because none is printed on escamillasroofing.com. Yelp is named on that site as the source of the Veronica Schultz quote. We will not mint a review short-link.</p>
+    </div>
+    <p style="margin-top:1rem">
+      <a href="tel:+17606398349">(760) 639-8349</a>
+      ·
+      <a href="sms:+17606398349" data-i18n="sms">Text the shop</a>
+    </p>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    I18N.en.back = "Back to shop";
+    I18N.en.kicker = "After the job";
+    I18N.en.h1 = "If the work was good, say so where other people look.";
+    I18N.en.lede = "The original Escamilla’s site prints one Yelp note from Veronica Schultz. This page does not invent a Google review link. Search the shop name on the listing you already use.";
+    I18N.en.s1 = "Search “Escamilla’s Roofing and Raingutters Escondido”.";
+    I18N.en.s2 = "Open the listing that matches this family shop — Escondido, (760) 639-8349.";
+    I18N.en.s3 = "Write what happened on the roof or the gutter run. Name helps.";
+    I18N.en.honest = "No Maps URL is printed here because none is printed on escamillasroofing.com. Yelp is named on that site as the source of the Veronica Schultz quote. We will not mint a review short-link.";
+    I18N.en.sms = "Text the shop";
+    I18N.es.back = "Volver al taller";
+    I18N.es.kicker = "Después del trabajo";
+    I18N.es.h1 = "Si el trabajo estuvo bien, dígalo donde la gente ya busca.";
+    I18N.es.lede = "El sitio original de Escamilla’s publica una nota de Yelp de Veronica Schultz. Esta página no inventa un enlace de Google. Busque el nombre del taller en el listado que ya usa.";
+    I18N.es.s1 = "Busque “Escamilla’s Roofing and Raingutters Escondido”.";
+    I18N.es.s2 = "Abra el listado de este taller familiar — Escondido, (760) 639-8349.";
+    I18N.es.s3 = "Cuente lo que pasó en el techo o en el canalón. El nombre ayuda.";
+    I18N.es.honest = "No hay URL de Maps aquí porque no hay ninguna en escamillasroofing.com. Yelp sí aparece en ese sitio como fuente de la cita de Veronica Schultz. No inventamos un enlace corto de reseñas.";
+    I18N.es.sms = "Textear al taller";
+    try {
+      const saved = localStorage.getItem("escamilla-lang");
+      if (saved === "es" || saved === "en") setLang(saved);
+    } catch (_) {}
+  </script>
+</body>
+</html>
