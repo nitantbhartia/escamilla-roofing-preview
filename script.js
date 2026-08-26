@@ -25,11 +25,7 @@ const I18N = {
     g1t: "Custom rain gutter installations",
     g1b: "Custom-fit solutions for homes & businesses.",
     g2t: "Rain gutter repairs",
-    g2b: "Repairs on the system you already have.",
-    g3t: "Downspouts",
-    g3b: "Downspout installation & replacement.",
-    g4t: "Cleaning",
-    g4b: "Gutter cleaning & clog removal.",
+    g2b: "Downspout installation & replacement, gutter cleaning & clog removal.",
     g5t: "Gutter guards",
     g5b: "Screens or covers keep out leaves, dirt, and other debris while allowing water to flow freely.",
     whyT: "Why choose Escamillas Roofing?",
@@ -87,11 +83,7 @@ const I18N = {
     g1t: "Instalación de canalones a medida",
     g1b: "Soluciones a la medida para casas y negocios.",
     g2t: "Reparación de canalones",
-    g2b: "Reparación en el sistema que ya tiene.",
-    g3t: "Bajantes",
-    g3b: "Instalación y reemplazo de bajantes.",
-    g4t: "Limpieza",
-    g4b: "Limpieza de canalones y destape.",
+    g2b: "Instalación y reemplazo de bajantes, limpieza de canalones y destape.",
     g5t: "Protectores",
     g5b: "Mallas o cubiertas que detienen hojas, tierra y escombros y dejan pasar el agua.",
     whyT: "¿Por qué Escamillas Roofing?",
@@ -162,7 +154,7 @@ if (form) {
     const need = (form.elements.need.value || "").trim();
     const address = (form.elements.address.value || "").trim();
     const details = (form.elements.details.value || "").trim();
-    if (!name || !need) return;
+    if (!name || !need || !address) return;
     let body = "Name: " + name + "\nNeed: " + need;
     if (address) body += "\nAddress: " + address;
     if (details) body += "\nDetails: " + details;
