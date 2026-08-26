@@ -6,71 +6,57 @@
   <title>Leave a review · Escamilla’s Roofing and Raingutters</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Teko:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .rev { max-width: 520px; margin: 1.5rem auto 2.5rem; padding: 0 var(--pad); }
+    body { background: var(--tar); }
+    .rev { position: relative; z-index: 1; max-width: 520px; margin: 1.6rem auto 2.5rem; padding: 0 1rem; }
     .rev-card {
-      background: var(--paper); color: var(--tar);
-      border: 1px solid #8e9690; padding: 1.3rem 1.3rem 1.5rem;
+      background: var(--paper); color: var(--ink);
+      border: 1px solid #8e9690; padding: 1.3rem;
+      box-shadow: 0 0 0 8px #6d7570, 0 0 0 10px #c5ccc6;
     }
     .rev h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); margin: 0 0 0.4rem; }
-    .rev p { max-width: 48ch; }
     .rev img.qr { width: 220px; height: 220px; display: block; margin: 0.9rem auto; background: #fff; }
     .rev .actions { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1rem; }
-    .scan { margin-top: 0.35rem; text-align: center; font-size: 0.95rem; }
+    .scan { margin-top: 0.35rem; text-align: center; }
     @media print {
-      .mast, .mast-tools, .lang, .rev .actions { display: none !important; }
+      .coil-world, .lang, .rev .actions { display: none !important; }
       body, html { background: #fff; }
       .rev { margin: 0; }
+      .rev-card { box-shadow: none; }
     }
   </style>
 </head>
 <body>
-  <header class="mast">
-    <div class="mast-inner">
-      <a class="mark" href="index.html">
-        <span class="mark-coil" aria-hidden="true"></span>
-        <span>
-          <b>Escamilla’s</b>
-          <small>Roofing and Raingutters</small>
-        </span>
-      </a>
-      <div class="mast-tools">
-        <div class="lang" role="group" aria-label="Language">
-          <button type="button" data-lang="en" aria-pressed="true">EN</button>
-          <button type="button" data-lang="es" aria-pressed="false">ES</button>
-        </div>
-        <a class="btn ink" href="index.html" data-i18n="back">Back to shop</a>
-      </div>
-    </div>
-  </header>
   <main class="rev">
     <div class="rev-card">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
       <h1>Escamilla’s Roofing and Raingutters</h1>
       <p>Escondido · <a href="tel:+17606398349">(760) 639-8349</a></p>
       <img class="qr" src="review-qr.svg" width="220" height="220" alt="QR code: Google search for Escamilla’s Roofing and Raingutters Escondido">
       <p class="scan" data-i18n="scan">Scan to find us on Google and leave a review.</p>
       <div class="actions">
         <button type="button" class="btn mill" id="print-card" data-i18n="printBtn">Print</button>
-        <a class="btn ghost" href="index.html" data-i18n="back2">Back to shop</a>
+        <a class="btn ghost" href="index.html" data-i18n="back">Back to the mill tag</a>
       </div>
     </div>
   </main>
   <script src="script.js"></script>
   <script>
-    I18N.en.back = "Back to shop";
-    I18N.en.back2 = "Back to shop";
+    I18N.en.back = "Back to the mill tag";
     I18N.en.scan = "Scan to find us on Google and leave a review.";
     I18N.en.printBtn = "Print";
     I18N.en.docTitle = "Leave a review · Escamilla’s Roofing and Raingutters";
-    I18N.es.back = "Volver al taller";
-    I18N.es.back2 = "Volver al taller";
+    I18N.es.back = "Volver a la etiqueta de molino";
     I18N.es.scan = "Escanee para encontrarnos en Google y dejar una reseña.";
     I18N.es.printBtn = "Imprimir";
     I18N.es.docTitle = "Dejar reseña · Escamilla’s Roofing and Raingutters";
     try {
-      const saved = localStorage.getItem("escamilla-lang");
+      const saved = localStorage.getItem(LANG_KEY);
       if (saved === "es" || saved === "en") setLang(saved);
     } catch (_) {}
   </script>
