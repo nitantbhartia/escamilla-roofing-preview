@@ -33,7 +33,7 @@
       var err = document.getElementById("job-err");
       if (!name || !need || !address) { if (err) err.hidden = false; return; }
       if (err) err.hidden = true;
-      var body = "Escamilla Roofing job\nName: " + name + "\nNeed: " + need + "\nAddress: " + address;
+      var body = "Escamilla Roofing job\nName: " + name + "\nAddress: " + address + "\nNeed: " + need;
       window.location.href = "sms:" + PHONE + "?body=" + encodeURIComponent(body);
     });
   }
