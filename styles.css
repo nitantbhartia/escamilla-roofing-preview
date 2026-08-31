@@ -1,9 +1,8 @@
-/* Escamilla’s — mill-aluminum coil is the page; copy lives on a riveted tag. */
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;1,400&family=Teko:wght@500;600;700&display=swap");
+/* Escamilla’s — mill-aluminum coil is the page; copy lives on a riveted mill tag. Allerta Stencil / Cabin / Roboto Mono. */
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Cabin:ital,wght@0,400;0,600;1,400&family=Roboto+Mono:wght@400;600&display=swap");
 
 :root {
   --mill: #c5ccc6;
-  --mill-2: #9aa39c;
   --tar: #141918;
   --ink: #1c2220;
   --paper: #dfe3de;
@@ -11,33 +10,24 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--tar); }
+html, body { margin: 0; }
 body {
-  margin: 0;
-  font-family: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  font-family: Cabin, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--tar);
-  line-height: 1.35;
+  line-height: 1.28;
+  min-height: 100vh;
 }
 a { color: inherit; }
 a.plain { text-underline-offset: 2px; }
 button, input, textarea { font-family: inherit; }
 p { margin: 0; }
 
-.tar {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 1rem 0.6rem 1.4rem;
-  background:
-    radial-gradient(ellipse at 50% 40%, #2a3230 0 18%, transparent 55%),
-    var(--tar);
-}
-
 .coil {
   position: relative;
-  width: min(920px, 100%);
-  min-height: calc(100vh - 2rem);
+  max-width: 7.1in;
+  min-height: calc(100vh - 1.4rem);
+  margin: 0.7rem auto 0.7rem;
   overflow: hidden;
   background:
     repeating-radial-gradient(circle at 50% 46%,
@@ -45,46 +35,37 @@ p { margin: 0; }
       #b7beb8 13px 24px,
       #7a8280 25px 30px,
       #c5ccc6 31px 44px);
-  box-shadow: 0 0 0 10px #0c100f, 0 22px 40px #000a;
+  box-shadow: 0 0 0 10px #0c100f, 0 20px 36px #000a;
 }
 
-.rings { display: none; }
 .hub {
   position: absolute;
   left: 50%;
   top: 46%;
-  width: 22vmin;
-  height: 22vmin;
+  width: 18vmin;
+  height: 18vmin;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(circle, #1c2220 38%, #3a4240 68%, #8e9690 100%);
-  box-shadow: inset 0 0 0 10px #b7beb8, inset 0 0 40px #000;
+  box-shadow: inset 0 0 0 8px #b7beb8, inset 0 0 36px #000;
   pointer-events: none;
 }
 
 .tag {
   position: relative;
   z-index: 1;
-  width: min(540px, calc(100% - 1.6rem));
-  margin: 1.2rem auto 1.4rem;
-  background:
-    linear-gradient(180deg, #ecefe9 0%, var(--paper) 42%, #cfd5cf 100%);
+  width: min(420px, calc(100% - 1.4rem));
+  margin: 1rem auto 1.1rem;
+  background: linear-gradient(180deg, #ecefe9 0%, var(--paper) 42%, #cfd5cf 100%);
   border: 1px solid #8e9690;
-  box-shadow:
-    0 0 0 7px #6d7570,
-    0 0 0 9px #c5ccc6,
-    8px 14px 0 #0005;
-  padding: 1rem 1rem 1.05rem;
+  box-shadow: 0 0 0 6px #6d7570, 0 0 0 8px #c5ccc6, 7px 12px 0 #0005;
+  padding: 0.7rem 0.8rem 0.75rem;
 }
 
-.rivets {
-  position: absolute;
-  inset: 8px;
-  pointer-events: none;
-}
+.rivets { position: absolute; inset: 7px; pointer-events: none; }
 .rivets i {
   position: absolute;
-  width: 12px; height: 12px;
+  width: 11px; height: 11px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #e8ece8, #6d7570 70%);
   box-shadow: 0 1px 0 #0006;
@@ -94,21 +75,16 @@ p { margin: 0; }
 .rivets i:nth-child(3) { bottom: 0; left: 0; }
 .rivets i:nth-child(4) { bottom: 0; right: 0; }
 
-.lang {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.2rem;
-  margin-bottom: 0.25rem;
-}
+.lang { display: flex; justify-content: flex-end; gap: 0.15rem; margin-bottom: 0.12rem; }
 .lang button {
   background: transparent;
   border: 1px solid #5c6560;
   color: var(--ink);
-  padding: 0.1rem 0.4rem;
+  padding: 0.06rem 0.32rem;
   cursor: pointer;
-  font-family: "Teko", "Arial Narrow", sans-serif;
-  letter-spacing: 0.08em;
-  font-size: 1rem;
+  font-family: "Allerta Stencil", "Arial Narrow", sans-serif;
+  letter-spacing: 0.06em;
+  font-size: 0.82rem;
 }
 .lang button[aria-pressed="true"] {
   background: var(--ink);
@@ -117,117 +93,94 @@ p { margin: 0; }
 }
 
 .mill-id {
-  font-family: "Teko", "Arial Narrow", sans-serif;
-  letter-spacing: 0.16em;
-  font-size: 0.95rem;
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  letter-spacing: 0.1em;
+  font-size: 0.62rem;
   color: #5c6560;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.1rem;
+  text-transform: uppercase;
 }
 h1 {
-  font-family: "Teko", "Arial Narrow", sans-serif;
-  font-weight: 700;
+  font-family: "Allerta Stencil", "Arial Narrow", sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  line-height: 0.88;
-  font-size: clamp(2.1rem, 7vw, 3.3rem);
-  margin: 0 0 0.25rem;
+  line-height: 0.9;
+  font-size: clamp(1.55rem, 5.5vw, 2.15rem);
+  margin: 0 0 0.18rem;
 }
-h1 span { display: block; font-size: 0.52em; letter-spacing: 0.08em; font-weight: 600; }
+h1 span { display: block; font-size: 0.52em; letter-spacing: 0.06em; }
 .lede {
-  font-family: "Teko", sans-serif;
+  font-family: "Allerta Stencil", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: 1.25rem;
-  line-height: 0.95;
-  margin: 0 0 0.35rem;
+  letter-spacing: 0.02em;
+  font-size: 0.92rem;
+  line-height: 1.05;
+  margin: 0 0 0.22rem;
 }
-.weather { font-size: 0.9rem; margin-bottom: 0.35rem; }
-.where, .bonded, .run, .fine { font-size: 0.82rem; margin-bottom: 0.28rem; }
-.bonded { font-weight: 600; letter-spacing: 0.04em; }
+.weather { font-size: 0.78rem; margin-bottom: 0.22rem; }
+.where, .bonded, .run, .fine { font-size: 0.72rem; margin-bottom: 0.16rem; }
+.bonded { font-weight: 600; letter-spacing: 0.03em; }
 .run { color: #3a4240; }
-
-blockquote {
-  margin: 0.4rem 0 0.5rem;
-  padding: 0.35rem 0 0.3rem 0.7rem;
-  border-left: 3px solid var(--brass);
-  font-size: 0.78rem;
-}
-blockquote p {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-blockquote footer {
-  margin-top: 0.2rem;
-  font-family: "Teko", sans-serif;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
 
 .phone-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 0.7rem;
+  gap: 0.22rem 0.5rem;
   align-items: baseline;
-  margin: 0.3rem 0 0.35rem;
-  font-size: 0.82rem;
+  margin: 0.22rem 0 0.28rem;
+  font-size: 0.72rem;
 }
 .phone {
-  font-family: "Teko", sans-serif;
-  font-size: 1.7rem;
-  letter-spacing: 0.06em;
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
   background: var(--ink);
   color: var(--paper);
-  padding: 0.05rem 0.45rem 0.12rem;
+  padding: 0.04rem 0.35rem 0.08rem;
 }
 
 .stamp {
-  margin-top: 0.45rem;
-  padding-top: 0.4rem;
+  margin-top: 0.28rem;
+  padding-top: 0.28rem;
   border-top: 1px dashed #6d7570;
-  font-family: "Teko", sans-serif;
+  font-family: "Roboto Mono", ui-monospace, monospace;
 }
 .stamp-head {
-  letter-spacing: 0.14em;
+  font-family: "Allerta Stencil", sans-serif;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 1.15rem;
-  margin-bottom: 0.2rem;
+  font-size: 0.92rem;
+  margin-bottom: 0.12rem;
 }
 .stamp label {
   display: block;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  margin: 0.15rem 0 0;
-  font-family: "Teko", sans-serif;
+  font-size: 0.62rem;
+  margin: 0.1rem 0 0;
 }
-.stamp input, .stamp textarea {
+.stamp input {
   width: 100%;
   background: transparent;
   border: 0;
   border-bottom: 1px solid #3a4240;
-  padding: 0.12rem 0;
-  font-family: "Public Sans", sans-serif;
-  font-size: 0.9rem;
+  padding: 0.08rem 0;
+  font-family: Cabin, sans-serif;
+  font-size: 0.85rem;
 }
-.stamp textarea { min-height: 2rem; resize: vertical; }
 .stamp button {
   width: 100%;
-  margin-top: 0.4rem;
+  margin-top: 0.32rem;
   background: var(--brass);
   color: var(--tar);
   border: 0;
-  padding: 0.4rem 0.5rem;
+  padding: 0.32rem 0.4rem;
   cursor: pointer;
-  font-family: "Teko", sans-serif;
-  font-size: 1.25rem;
-  letter-spacing: 0.1em;
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 0.98rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.hint { font-family: "Public Sans", sans-serif; font-size: 0.75rem; margin: 0.2rem 0 0; color: #3a4240; }
-
-@media (max-width: 560px) {
-  blockquote p { -webkit-line-clamp: unset; }
-}
+.hint { font-family: Cabin, sans-serif; font-size: 0.68rem; margin: 0.12rem 0 0; color: #3a4240; }
