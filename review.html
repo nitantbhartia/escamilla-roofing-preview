@@ -6,27 +6,21 @@
   <title>Review card — Escamilla’s Roofing and Raingutters</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    body { min-height: 100vh; background: var(--tar); }
-    .rev { position: relative; z-index: 1; max-width: 5in; margin: 1.4rem auto 2rem; padding: 0 0.8rem; }
+    .rev { position: relative; z-index: 1; max-width: 520px; margin: 1.6rem auto 2.5rem; padding: 0 1rem; }
     .rev-card {
       background: var(--paper); color: var(--ink);
-      border: 1px solid #8e9690; padding: 1.15rem 1.1rem 1rem;
-      box-shadow: 0 0 0 6px #6d7570, 0 0 0 8px #c5ccc6;
+      border: 1px solid #8e9690; padding: 1.3rem;
+      box-shadow: 0 0 0 8px #6d7570, 0 0 0 10px #c5ccc6;
     }
-    .rev h1 {
-      font-size: clamp(1.4rem, 5vw, 1.9rem); margin: 0 0 0.28rem;
-      font-family: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
-      text-transform: uppercase; line-height: 0.92; font-weight: 800;
-    }
-    .rev img.qr { width: 200px; height: 200px; display: block; margin: 0.7rem auto; background: #fff; }
-    .rev .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.85rem; }
+    .rev h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); margin: 0 0 0.4rem; font-family: "Big Shoulders Stencil", "Arial Narrow", sans-serif; text-transform: uppercase; line-height: 0.95; font-weight: 800; }
+    .rev img.qr { width: 220px; height: 220px; display: block; margin: 0.9rem auto; background: #fff; }
+    .rev .actions { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1rem; }
     .rev .actions button, .rev .actions a {
       background: var(--brass); color: var(--tar); text-decoration: none; border: 0;
-      padding: 0.38rem 0.62rem; cursor: pointer;
-      font-family: "Big Shoulders Stencil", sans-serif;
-      letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.92rem; font-weight: 700;
+      padding: 0.45rem 0.7rem; cursor: pointer; font-family: "Big Shoulders Stencil", sans-serif;
+      letter-spacing: 0.08em; text-transform: uppercase; font-size: 1rem; font-weight: 700;
     }
-    .scan { margin-top: 0.28rem; text-align: center; font-size: 0.92rem; }
+    .scan { margin-top: 0.35rem; text-align: center; }
     @media print {
       .lang, .rev .actions { display: none !important; }
       body, html { background: #fff; }
@@ -44,9 +38,8 @@
       </div>
       <h1>Escamilla’s Roofing and Raingutters</h1>
       <p>Escondido · CA License #1095166 · <a href="tel:+17606398349">(760) 639-8349</a></p>
-      <p data-en="Click To Email Us" data-es="Clic para enviarnos un correo">Click To Email Us</p>
-      <img class="qr" src="review-qr.svg" width="200" height="200" alt="QR code to Escamilla’s Roofing and Raingutters on Yelp">
-      <p class="scan" data-en="Scan for Yelp." data-es="Escanee para Yelp.">Scan for Yelp.</p>
+      <img class="qr" src="review-qr.svg" width="220" height="220" alt="QR code to Escamilla’s Roofing and Raingutters on Yelp">
+      <p class="scan" data-en="Scan to find us on Yelp and leave a review." data-es="Escanee para encontrarnos en Yelp y dejar una reseña.">Scan to find us on Yelp and leave a review.</p>
       <div class="actions">
         <button type="button" id="print-card" data-en="Print this card" data-es="Imprimir esta tarjeta">Print this card</button>
         <a href="index.html" data-en="Back to the coil" data-es="Volver al rollo">Back to the coil</a>
