@@ -9,7 +9,33 @@
 </head>
 <body>
   <article class="coil" aria-label="Mill-aluminum raingutter coil">
+    <svg class="rolled" viewBox="0 0 100 140" preserveAspectRatio="xMidYMid slice" role="img">
+      <title>Escamilla’s Roofing and Raingutters mill coil</title>
+      <defs>
+        <path id="ring-a" d="M50,14.2 a35.8,35.8 0 1 1 -0.01,0"/>
+        <path id="ring-b" d="M50,21.4 a28.6,28.6 0 1 1 -0.01,0"/>
+        <path id="ring-c" d="M50,28.2 a21.8,21.8 0 1 1 -0.01,0"/>
+        <path id="ring-d" d="M50,34.6 a15.4,15.4 0 1 1 -0.01,0"/>
+      </defs>
+      <g class="show-en">
+        <text class="mill-ring"><textPath href="#ring-a">EXPERT ROOFING AND GUTTER SERVICES, PROUDLY SERVING SAN DIEGO COUNTY · EXPERT ROOFING AND GUTTER SERVICES, PROUDLY SERVING SAN DIEGO COUNTY ·</textPath></text>
+        <text class="mill-ring"><textPath href="#ring-b">Family-owned and operated in Escondido · San Diego County, North County and Temecula · Protecting San Diego Homes &amp; Businesses With Quality Roofing ·</textPath></text>
+        <text class="mill-ring"><textPath href="#ring-c">New roof · leak repair · complete reroof · commercial (offices, warehouses, retail) · custom seamless gutters · repairs · downspouts · cleaning · gutter guards ·</textPath></text>
+        <text class="mill-ring"><textPath href="#ring-d">Bonded and insured · No hidden fees, just great value · We stand behind every job · Quality materials · Honest pricing · Free estimate ·</textPath></text>
+      </g>
+      <g class="show-es">
+        <text class="mill-ring"><textPath href="#ring-a">SERVICIOS EXPERTOS DE TECHO Y CANALÓN, CON ORGULLO EN EL CONDADO DE SAN DIEGO · SERVICIOS EXPERTOS DE TECHO Y CANALÓN, CON ORGULLO EN EL CONDADO DE SAN DIEGO ·</textPath></text>
+        <text class="mill-ring"><textPath href="#ring-b">De familia, con sede en Escondido · Condado de San Diego, North County y Temecula · Protegiendo hogares y negocios de San Diego con techos de calidad ·</textPath></text>
+        <text class="mill-ring"><textPath href="#ring-c">Techo nuevo · fuga · retecho completo · comercial (oficinas, bodegas, locales) · canalones sin costura · reparaciones · bajantes · limpieza · protectores ·</textPath></text>
+        <text class="mill-ring"><textPath href="#ring-d">Fianza y seguro · Sin cargos ocultos, buen valor · Respaldamos cada trabajo · Materiales de calidad · Precio honesto · Estimado gratis ·</textPath></text>
+      </g>
+    </svg>
+
     <div class="hub" aria-hidden="true"></div>
+    <div class="lip" aria-hidden="true"></div>
+    <p class="lip-type show-en">SEAMLESS RAINGUTTERS · ESCONDIDO · FAMILY OWNED · SAN DIEGO COUNTY · NORTH COUNTY · TEMECULA</p>
+    <p class="lip-type show-es">CANALONES SIN COSTURA · ESCONDIDO · DE FAMILIA · CONDADO DE SAN DIEGO · NORTH COUNTY · TEMECULA</p>
+
     <div class="tag">
       <div class="rivets" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <nav class="lang" aria-label="Language">
@@ -20,17 +46,18 @@
       <p class="lic">CA License #1095166</p>
       <p class="phone"><a href="tel:+17606398349">(760) 639-8349</a></p>
       <p class="weather" data-en="Weather you are looking for to fix a roof leak, or need a complete reroof, we are here to help." data-es="Ya sea que busque reparar una fuga de techo, o un retecho completo, estamos para ayudar.">Weather you are looking for to fix a roof leak, or need a complete reroof, we are here to help.</p>
-      <form class="blanks" id="job-form">
+      <p class="vs" title="Veronica Schultz">V.S.</p>
+      <form class="blanks" id="job-form" action="sms:+17606398349" method="get">
         <label for="name" data-en="Name" data-es="Nombre">Name</label>
         <input id="name" name="name" required autocomplete="name">
-        <label for="address" data-en="Address" data-es="Dirección">Address</label>
-        <input id="address" name="address" required autocomplete="street-address">
         <label for="need" data-en="Need" data-es="Necesidad">Need</label>
         <input id="need" name="need" required>
-        <p id="job-err" hidden class="hint" data-en="Name, address, and what you need are required." data-es="Nombre, dirección y lo que necesita son obligatorios.">Name, address, and what you need are required.</p>
-        <button type="submit" data-en="Text (760) 639-8349" data-es="Textear (760) 639-8349">Text (760) 639-8349</button>
+        <label for="address" data-en="Address" data-es="Dirección">Address</label>
+        <input id="address" name="address" required autocomplete="street-address">
+        <p id="job-err" hidden class="hint" data-en="Name, need, and address are required." data-es="Nombre, necesidad y dirección son obligatorios.">Name, need, and address are required.</p>
+        <button type="submit">(760) 639-8349</button>
       </form>
-      <p class="edge"><a class="plain" href="review.html" data-en="Review card" data-es="Tarjeta de reseña">Review card</a></p>
+      <p class="edge"><a href="review.html" data-en="Review card" data-es="Tarjeta de reseña">Review card</a></p>
     </div>
   </article>
   <script src="script.js"></script>
