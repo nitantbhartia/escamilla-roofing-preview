@@ -214,23 +214,3 @@ h1 span { display: block; font-size: 0.48em; letter-spacing: 0.08em; font-weight
   body, html { background: #fff; }
   .coil { min-height: auto; box-shadow: none; }
 }
-
-.coil-lede, .coil-run, .coil-where, .coil-fine {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(88%, 42em);
-  text-align: center;
-  z-index: 1;
-  color: #1c2220;
-  text-shadow: 0 1px 0 #e8ece8;
-  font-family: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  pointer-events: none;
-}
-.coil-lede { top: 0.55rem; font-size: clamp(0.85rem, 2.1vw, 1.2rem); font-weight: 700; }
-.coil-run { top: 2.05rem; font-size: clamp(0.62rem, 1.5vw, 0.85rem); letter-spacing: 0.1em; }
-.coil-where { bottom: 1.7rem; font-size: clamp(0.7rem, 1.7vw, 0.95rem); font-weight: 700; }
-.coil-fine { bottom: 0.45rem; font-size: clamp(0.62rem, 1.4vw, 0.82rem); }
-.edge { display: flex; flex-wrap: wrap; gap: 0.35rem 0.7rem; justify-content: flex-end; }
