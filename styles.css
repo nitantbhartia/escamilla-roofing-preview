@@ -1,5 +1,5 @@
-/* Escamilla’s — mill-aluminum coil fills the 5×7; short riveted mill stamp. Big Shoulders Stencil / Cabin / Roboto Mono. */
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;700;800&family=Cabin:ital,wght@0,400;0,600;1,400&family=Roboto+Mono:wght@400;600&display=swap");
+/* Escamilla’s — mill-aluminum coil fills the frame; riveted mill stamp is short. Big Shoulders Stencil / Literata / Fragment Mono. */
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;700;800&family=Fragment+Mono&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap");
 
 :root {
   --mill: #c5ccc6;
@@ -12,62 +12,55 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 body {
-  font-family: Cabin, "Segoe UI", sans-serif;
+  font-family: Literata, "Times New Roman", serif;
   color: var(--ink);
   background: var(--tar);
   min-height: 100vh;
-  min-height: 100dvh;
 }
 a { color: inherit; }
+a.plain { text-underline-offset: 2px; }
 button, input { font-family: inherit; }
 p { margin: 0; }
 
 .coil {
   position: relative;
-  width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  height: 100dvh;
+  width: 100%;
   overflow: hidden;
   background:
-    radial-gradient(circle at 46% 34%, transparent 7.2%, #0008 8.1%, transparent 9.2%),
-    repeating-radial-gradient(circle at 46% 34%,
-      #8e9690 0 10px,
-      #b7beb8 11px 21px,
-      #7a8280 22px 27px,
-      #c5ccc6 28px 40px,
-      #9aa39c 41px 48px);
-  box-shadow: inset 0 0 90px #000c;
+    radial-gradient(circle at 50% 48%, transparent 8%, #0007 9.2%, transparent 10.4%),
+    repeating-radial-gradient(circle at 50% 48%,
+      #8e9690 0 11px,
+      #b7beb8 12px 22px,
+      #7a8280 23px 29px,
+      #c5ccc6 30px 42px,
+      #9aa39c 43px 50px);
+  box-shadow: inset 0 0 90px #000b;
 }
 
-.rolled {
+.rings {
   position: absolute;
-  inset: -14%;
+  inset: -22%;
+  background:
+    repeating-conic-gradient(from 0deg at 50% 50%,
+      #ffffff14 0 1.6deg,
+      transparent 1.6deg 8deg);
+  mix-blend-mode: overlay;
   pointer-events: none;
-  z-index: 1;
-}
-.mill-ring {
-  fill: #2a322f;
-  font-family: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
-  font-weight: 700;
-  font-size: 2.05px;
-  letter-spacing: 0.12px;
-  text-transform: uppercase;
-  opacity: 0.55;
 }
 
 .hub {
   position: absolute;
-  left: 46%;
-  top: 34%;
-  width: 15vmin;
-  height: 15vmin;
+  left: 50%;
+  top: 48%;
+  width: 22vmin;
+  height: 22vmin;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, #1c2220 38%, #3a4240 68%, #8e9690 100%);
-  box-shadow: inset 0 0 0 7px #b7beb8, inset 0 0 28px #000, 0 0 0 2px #5c6560;
+  background: radial-gradient(circle, #1c2220 36%, #3a4240 66%, #8e9690 100%);
+  box-shadow: inset 0 0 0 10px #b7beb8, inset 0 0 40px #000, 0 0 0 3px #5c6560;
   pointer-events: none;
-  z-index: 2;
 }
 
 .lip {
@@ -75,53 +68,31 @@ p { margin: 0; }
   right: 0;
   top: 0;
   bottom: 0;
-  width: 4.2%;
+  width: 5.2%;
   background:
-    linear-gradient(90deg, #0005, transparent 28%, #fff3 68%, #8e9690),
-    repeating-linear-gradient(#b7beb8 0 7px, #8e9690 7px 9px, #c5ccc6 9px 16px);
+    linear-gradient(90deg, #0005, transparent 28%, #fff5 68%, #8e9690),
+    repeating-linear-gradient(#b7beb8 0 8px, #8e9690 8px 10px, #c5ccc6 10px 18px);
   box-shadow: -10px 0 18px #0006;
   pointer-events: none;
-  z-index: 3;
 }
-
-.lip-type {
-  position: absolute;
-  right: 0.55%;
-  top: 50%;
-  z-index: 4;
-  transform: translateY(-50%) rotate(90deg);
-  transform-origin: center;
-  font-family: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
-  font-weight: 800;
-  font-size: clamp(0.62rem, 1.6vh, 0.82rem);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #1c2220;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0.72;
-}
-
-html[data-lang="es"] .show-en { display: none !important; }
-html:not([data-lang="es"]) .show-es { display: none !important; }
 
 .tag {
   position: absolute;
-  z-index: 5;
-  right: max(5.4%, 0.7rem);
-  top: 54%;
-  width: min(2.18in, 58vw);
-  transform: rotate(-1.2deg);
+  z-index: 2;
+  left: 50%;
+  top: 52%;
+  width: min(16.4rem, calc(100% - 2.2rem));
+  transform: translate(-50%, -46%) rotate(-1.4deg);
   background: linear-gradient(180deg, #ecefe9 0%, var(--paper) 48%, #cfd5cf 100%);
   border: 1px solid #8e9690;
-  box-shadow: 0 0 0 4px #6d7570, 0 0 0 6px #c5ccc6, 6px 9px 0 #0005;
-  padding: 0.42rem 0.5rem 0.36rem;
+  box-shadow: 0 0 0 4px #6d7570, 0 0 0 6px #c5ccc6, 7px 10px 0 #0005;
+  padding: 0.55rem 0.7rem 0.5rem;
 }
 
-.rivets { position: absolute; inset: 5px; pointer-events: none; }
+.rivets { position: absolute; inset: 6px; pointer-events: none; }
 .rivets i {
   position: absolute;
-  width: 8px; height: 8px;
+  width: 10px; height: 10px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #e8ece8, #6d7570 70%);
   box-shadow: 0 1px 0 #0006;
@@ -131,18 +102,17 @@ html:not([data-lang="es"]) .show-es { display: none !important; }
 .rivets i:nth-child(3) { bottom: 0; left: 0; }
 .rivets i:nth-child(4) { bottom: 0; right: 0; }
 
-.lang { display: flex; justify-content: flex-end; gap: 0.12rem; }
+.lang { display: flex; justify-content: flex-end; gap: 0.12rem; margin-bottom: 0.02rem; }
 .lang button {
   background: transparent;
   border: 1px solid #5c6560;
   color: var(--ink);
-  padding: 0 0.22rem;
+  padding: 0.02rem 0.24rem;
   cursor: pointer;
   font-family: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
   letter-spacing: 0.06em;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  line-height: 1.2;
 }
 .lang button[aria-pressed="true"] {
   background: var(--ink);
@@ -156,103 +126,84 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 0.86;
-  font-size: clamp(1.05rem, 3.8vw, 1.42rem);
+  font-size: clamp(1.45rem, 5.2vw, 1.95rem);
   margin: 0.04rem 0 0.08rem;
 }
-h1 span { display: block; font-size: 0.46em; letter-spacing: 0.07em; font-weight: 700; }
+h1 span { display: block; font-size: 0.5em; letter-spacing: 0.08em; font-weight: 700; }
 .lic {
   font-family: "Big Shoulders Stencil", sans-serif;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.95rem;
 }
 .phone { margin: 0.02rem 0 0.12rem; }
 .phone a {
   font-family: "Big Shoulders Stencil", sans-serif;
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 1.28rem;
   letter-spacing: 0.04em;
   text-decoration: none;
 }
 .weather {
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   line-height: 1.22;
   margin: 0 0 0.1rem;
 }
 .vs {
   font-family: "Big Shoulders Stencil", sans-serif;
   font-weight: 700;
-  letter-spacing: 0.22em;
-  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  font-size: 0.82rem;
   color: #5c6560;
   margin: 0 0 0.18rem;
 }
 
 .blanks {
   display: grid;
-  grid-template-columns: 3.6rem 1fr;
-  gap: 0.06rem 0.28rem;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 0.08rem 0.32rem;
   align-items: baseline;
-  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-family: "Fragment Mono", ui-monospace, monospace;
 }
 .blanks label {
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.52rem;
+  font-size: 0.55rem;
 }
 .blanks input {
   width: 100%;
   background: transparent;
   border: 0;
   border-bottom: 1px solid #3a4240;
-  padding: 0.02rem 0;
-  font-family: Cabin, sans-serif;
-  font-size: 0.78rem;
-  min-width: 0;
+  padding: 0.04rem 0;
+  font-family: Literata, serif;
+  font-size: 0.82rem;
 }
 .blanks .hint, .blanks button { grid-column: 1 / -1; }
 .blanks button {
   margin-top: 0.12rem;
-  justify-self: start;
   background: transparent;
   color: var(--ink);
-  border: 1.5px solid var(--ink);
-  padding: 0.08rem 0.42rem 0.06rem;
+  border: 0;
+  padding: 0;
   cursor: pointer;
   font-family: "Big Shoulders Stencil", sans-serif;
   font-weight: 800;
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  text-align: left;
 }
-.hint { font-family: Cabin, sans-serif; font-size: 0.58rem; margin: 0.04rem 0 0; color: #3a4240; }
-
-.coil-marks {
-  position: absolute;
-  z-index: 5;
-  left: 4%;
-  bottom: 4.2%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.55rem;
-  font-family: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.hint { font-family: Literata, serif; font-size: 0.62rem; margin: 0.06rem 0 0; color: #3a4240; }
+.edge {
+  margin-top: 0.18rem;
+  font-size: 0.62rem;
+  text-align: right;
 }
-.coil-marks a { color: #1c2220; text-decoration: none; border-bottom: 1px solid #3a424080; }
-
 
 @media print {
-  @page { size: 5in 7in; margin: 0; }
-  .lang, .coil-marks { display: none; }
-  html, body, .coil {
-    width: 5in;
-    height: 7in;
-    min-height: 7in;
-    overflow: hidden;
-    background-color: var(--mill);
-  }
+  .lang, .edge { display: none; }
+  body, html { background: #fff; }
+  .coil { min-height: auto; box-shadow: none; }
 }
