@@ -214,3 +214,9 @@ h1 span { display: block; font-size: 0.48em; letter-spacing: 0.08em; font-weight
   body, html { background: #fff; }
   .coil { min-height: auto; box-shadow: none; }
 }
+
+.lede { font-family: "Big Shoulders Stencil", sans-serif; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.92rem; line-height: 1.05; margin: 0 0 0.16rem; font-weight: 700; }
+.where, .bonded, .run, .fine { font-size: 0.7rem; margin-bottom: 0.12rem; }
+.bonded { font-weight: 600; }
+.run { color: #3a4240; }
+.phone-row { display: flex; flex-wrap: wrap; gap: 0.18rem 0.45rem; align-items: baseline; margin: 0.12rem 0 0.18rem; font-size: 0.7rem; }
