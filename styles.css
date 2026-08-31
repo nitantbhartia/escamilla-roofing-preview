@@ -1,5 +1,5 @@
-/* Escamilla’s — mill-aluminum coil fills the 5×7; short riveted mill stamp. Big Shoulders Stencil / Literata / Fragment Mono. */
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;700;800&family=Fragment+Mono&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap");
+/* Escamilla’s — mill-aluminum coil fills the 5×7; short riveted mill stamp. Big Shoulders Stencil / Cabin / Roboto Mono. */
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;700;800&family=Cabin:ital,wght@0,400;0,600;1,400&family=Roboto+Mono:wght@400;600&display=swap");
 
 :root {
   --mill: #c5ccc6;
@@ -12,7 +12,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 body {
-  font-family: Literata, "Times New Roman", serif;
+  font-family: Cabin, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--tar);
   min-height: 100vh;
@@ -194,7 +194,7 @@ h1 span { display: block; font-size: 0.46em; letter-spacing: 0.07em; font-weight
   grid-template-columns: 3.6rem 1fr;
   gap: 0.06rem 0.28rem;
   align-items: baseline;
-  font-family: "Fragment Mono", ui-monospace, monospace;
+  font-family: "Roboto Mono", ui-monospace, monospace;
 }
 .blanks label {
   letter-spacing: 0.08em;
@@ -207,30 +207,52 @@ h1 span { display: block; font-size: 0.46em; letter-spacing: 0.07em; font-weight
   border: 0;
   border-bottom: 1px solid #3a4240;
   padding: 0.02rem 0;
-  font-family: Literata, serif;
+  font-family: Cabin, sans-serif;
   font-size: 0.78rem;
   min-width: 0;
 }
 .blanks .hint, .blanks button { grid-column: 1 / -1; }
 .blanks button {
-  margin-top: 0.08rem;
+  margin-top: 0.12rem;
   justify-self: start;
   background: transparent;
   color: var(--ink);
-  border: 0;
-  padding: 0;
+  border: 1.5px solid var(--ink);
+  padding: 0.08rem 0.42rem 0.06rem;
   cursor: pointer;
   font-family: "Big Shoulders Stencil", sans-serif;
   font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
-  text-transform: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
-.edge {
-  margin-top: 0.12rem;
-  font-size: 0.55rem;
-  text-align: right;
-}
-.edge a { color: inherit; text-underline-offset: 2px; }
-.hint { font-family: Literata, serif; font-size: 0.58rem; margin: 0.04rem 0 0; color: #3a4240; }
+.hint { font-family: Cabin, sans-serif; font-size: 0.58rem; margin: 0.04rem 0 0; color: #3a4240; }
 
+.coil-marks {
+  position: absolute;
+  z-index: 5;
+  left: 4%;
+  bottom: 4.2%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.55rem;
+  font-family: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.coil-marks a { color: #1c2220; text-decoration: none; border-bottom: 1px solid #3a424080; }
+
+
+@media print {
+  @page { size: 5in 7in; margin: 0; }
+  .lang, .coil-marks { display: none; }
+  html, body, .coil {
+    width: 5in;
+    height: 7in;
+    min-height: 7in;
+    overflow: hidden;
+    background-color: var(--mill);
+  }
+}
